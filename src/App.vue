@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-view/>
+    <!-- 进入页面后进行缓存，不用每次重新进去都重新请求数据了 -->
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 <style lang="stylus">
