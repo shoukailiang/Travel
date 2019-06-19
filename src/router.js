@@ -15,6 +15,14 @@ export default new Router({
       path: '/city',
       name: 'City',
       component: () => import(/* webpackChunkName: "about" */ './views/city/City')
+    }, {
+      path: '/detail/:id',
+      name: 'Detail',
+      component: () => import(/* webpackChunkName: "about" */ './views/detail/Detail')
     }
-  ]
+  ],
+  // 
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
