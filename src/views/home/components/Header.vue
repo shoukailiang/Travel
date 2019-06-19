@@ -10,7 +10,7 @@
     </div>
     <router-link to='/city'>
       <div class="header-right">
-        {{this.$store.state.city}}
+        {{this.city}}
         <span class="iconfont arrow-icon">&#xe64a;</span>
     </div>
     </router-link>
@@ -19,10 +19,12 @@
 
 <script>
 // @ is an alias to /src
-
+import { mapState } from 'vuex'
 export default {
   name: 'HomeHeader',
-  components: {}
+  computed: {
+    ...mapState(['city'])
+  }
 }
 </script>
 <style lang="stylus" scoped>
